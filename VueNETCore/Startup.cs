@@ -49,6 +49,9 @@ namespace VueNETCore
                 endpoints.MapControllers();
             });
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseSpaStaticFiles();
             app.UseSpa(spa =>
             {
