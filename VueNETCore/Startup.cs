@@ -49,10 +49,11 @@ namespace VueNETCore
                 endpoints.MapControllers();
             });
 
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
+            //app.UseDefaultFiles();
 
             app.UseSpaStaticFiles();
+
+
             app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "client-app";

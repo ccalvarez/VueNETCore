@@ -7,18 +7,22 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String,
+    msg: String
   },
   data() {
     return {
-      results: [],
+      results: []
     };
   },
   async beforeMount() {
-    const r = await fetch('/api/values');
+    const r = await fetch(
+      process.env.NODE_ENV == "production"
+        ? "/VueNETCore/api/values"
+        : "/api/values"
+    );
     this.results = await r.json();
-  },
+  }
 };
 </script>
